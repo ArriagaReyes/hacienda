@@ -1,0 +1,16 @@
+{
+  "name": "hacienda",
+  "version": "0.0.1",
+  "description": "A website for a local restaurant",
+  "main": "index.html",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Omar Arriaga-Reyes",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  }
+}
