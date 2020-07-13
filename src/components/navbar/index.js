@@ -19,7 +19,7 @@ export default function Navbar(homeSection, menuSection, aboutSection) {
 
     const togglePage = (name) => {
         const section = document.getElementById('dynamic-section');
-        console.log(section.removeChild());
+        //section.removeChild(document.getElementById('Home'));
     }
 
     const togglePageName = (name) => {
