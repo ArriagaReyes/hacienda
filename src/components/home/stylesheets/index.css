@@ -1,0 +1,8 @@
+.home {
+  display: grid;
+  height: 100%;
+  justify-items: center;
+  align-content: space-between;
+}
+
+/*# sourceMappingURL=index.css.map */
