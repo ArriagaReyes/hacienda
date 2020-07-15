@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Emberly-Black';
+    src: url('./Emberly/Emberly-Black.woff') format('woff');
+}
+@font-face {
+    font-family: 'Emberly-Bold';
+    src: url('./Emberly/Emberly-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Emberly-Light';
+    src: url('./Emberly/Emberly-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Emberly';
+    src: url('./Emberly/Emberly-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Emberly-Thin';
+    src: url('./Emberly/Emberly-Thin.woff') format('woff');
+}
