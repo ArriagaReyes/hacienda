@@ -1,4 +1,10 @@
+import Home from '../home/index';
+import Menu from '../menu/index';
+
 export default function Navbar(homeSection, menuSection, aboutSection) {
+    const home = Home();
+    const menu = Menu();
+
     const navbar = document.createElement('div');
     const pageName = document.createElement('div');
     const links = document.createElement('div');
@@ -18,8 +24,14 @@ export default function Navbar(homeSection, menuSection, aboutSection) {
     }
 
     const togglePage = (name) => {
-        const section = document.getElementById('dynamic-section');
-        //section.removeChild(document.getElementById('Home'));
+        const root = document.getElementById('root');
+        if(name === pageName) {
+            return;
+        } else if(name === 'Home') {
+            root.childNodes[root.childNodes.length - 1].replaceWith(home);
+        } else if(name === 'Menu') {
+            root.childNodes[root.childNodes.length - 1].replaceWith(menu);
+        }
     }
 
     const togglePageName = (name) => {
@@ -28,6 +40,7 @@ export default function Navbar(homeSection, menuSection, aboutSection) {
     }
 
     navbar.className = 'nav';
+    pageName.id = 'page';
     pageName.textContent = 'Home';
     pageName.className = 'content';
     links.className = 'links';
@@ -49,8 +62,12 @@ export default function Navbar(homeSection, menuSection, aboutSection) {
 
 function Button(addEvent, eventFunction) {
     const button = document.createElement('div');
-    button.textContent = 'Button';
+    const icon = document.createElement('i');
+    icon.className = 'fa fa-bars';
+    icon.style.fontSize = '1.5rem';
     button.className = 'content';
+
+    button.appendChild(icon);
 
     if(addEvent) {
         button.addEventListener(
@@ -66,7 +83,6 @@ function Button(addEvent, eventFunction) {
 
 function Link(addEvent, eventFunction, content) {
     const container = document.createElement('div');
-    const link = document.createElement('a');
     container.className = 'link';
     container.textContent = content;
     
@@ -77,15 +93,13 @@ function Link(addEvent, eventFunction, content) {
                 if(eventFunction) {
                     eventFunction(e);
                 } else {
-                    console.log('No callback function passed.');
+                    console.error('No callback function passed.');
                     return null;
                 }
             }, 
             false
         );
     }
-
-    container.appendChild(link);
     
     return container;
 }
