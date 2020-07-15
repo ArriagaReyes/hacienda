@@ -1,8 +1,54 @@
-.home {
+.section {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
   height: 100%;
+}
+.section .menu-link {
+  z-index: 0;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 25%;
+  left: 20%;
+  display: grid;
+  place-items: center;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100%;
+  background-color: #000;
+  color: #fff;
+  animation: circle 14s linear infinite;
+}
+@keyframes circle {
+  0% {
+    transform: rotate(0deg) translate(-50px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(-50px) rotate(-360deg);
+  }
+}
+
+#Home {
   justify-items: center;
   align-content: space-between;
+}
+
+.title {
+  grid-column: 1/5;
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 7.25rem;
+  font-family: "Emberly-Black";
+}
+
+.sub-title {
+  grid-column: 2/4;
+  font-size: 1.5rem;
+  text-align: center;
+  align-self: center;
+}
+
+.sub-title:last-child {
+  padding-bottom: 3rem;
 }
 
 /*# sourceMappingURL=index.css.map */
