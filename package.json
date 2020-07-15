@@ -1,6 +1,6 @@
 {
   "name": "hacienda",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A website for a local restaurant",
   "main": "index.html",
   "scripts": {
