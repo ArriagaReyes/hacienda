@@ -1,5 +1,6 @@
 import Home from '../home/index';
 import Menu from '../menu/index';
+import './index.scss';
 
 export default function Navbar(homeSection, menuSection, aboutSection) {
     const home = Home();
@@ -25,12 +26,14 @@ export default function Navbar(homeSection, menuSection, aboutSection) {
 
     const togglePage = (name) => {
         const root = document.getElementById('root');
-        if(name === pageName) {
+        if(name === pageName.textContent) {
             return;
         } else if(name === 'Home') {
-            root.childNodes[root.childNodes.length - 1].replaceWith(home);
+            console.log(root.children.Home);
+            root.replaceChild();
         } else if(name === 'Menu') {
-            root.childNodes[root.childNodes.length - 1].replaceWith(menu);
+            console.log(root.childNodes[root.childNodes.length - 1]);
+//            root.childNodes[root.childNodes.length - 1].replaceWith(menu);
         }
     }
 

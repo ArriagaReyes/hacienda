@@ -1,5 +1,6 @@
 import Element from '../element';
 import Menu from '../menu/index';
+import './index.scss';
 
 export default function Home() {
     const home = Element('div', 'Home', 'section');
