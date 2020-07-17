@@ -11,6 +11,8 @@ root.appendChild(Navbar('Home', 'Menu', 'About'));
 console.log('Adding home');
 root.appendChild(home);
 
+console.log(root.replaceChild);
+
 /*root.removeChild(root.childNodes[root.childNodes.length - 1]);
 console.log('Removed home');
 console.log('Adding menu');
