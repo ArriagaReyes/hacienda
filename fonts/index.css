@@ -18,3 +18,24 @@
     font-family: 'Emberly-Thin';
     src: url('./Emberly/Emberly-Thin.woff') format('woff');
 }
+
+@font-face {
+    font-family: 'Clear';
+    src: url('./Clear-sans/ClearSans-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Clear-Bold';
+    src: url('./Clear-sans/ClearSans-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Clear-Light';
+    src: url('./Clear-sans/ClearSans-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Clear-Thin';
+    src: url('./Clear-sans/ClearSans-Thin.woff') format('woff');
+}
+@font-face {
+    font-family: 'Clear-Medium';
+    src: url('./Clear-sans/ClearSans-Medium.woff') format('woff');
+}
