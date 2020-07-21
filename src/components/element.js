@@ -1,15 +1,17 @@
 /**
  * 
- * @param {string} type 
- * @param {string} id 
- * @param {string} className
+ * @param {object} param 
+ * Param holds three variables
+ * type, id and className.
+ * 
+ * @returns HTMLElement
  */
-export default function Element(type, id, className) {
-    const element = document.createElement(type);
+export default function Element(param) {
+    const element = document.createElement(param.type);
 
-    if(id) { element.id = id; }
+    if(param.id) { element.id = param.id; }
 
-    if(className) { element.className = className; }
+    if(param.className) { element.className = param.className; }
 
     return element;
 }
