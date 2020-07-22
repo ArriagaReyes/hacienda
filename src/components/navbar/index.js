@@ -10,15 +10,15 @@ export default function Navbar() {
     return nav;
 }
 
-function Toggle() {
-    // Do something to change 'page'    
+function Toggle(next, current) {
+
 }
 
 function List() {
     const list = Element({type: 'ul'});
-    const home = Link({textContent: 'Home', className: 'current'});
-    const menu = Link({textContent: 'Menu'});
-    const about = Link({textContent: 'About'});
+    const home = Link({id: 'Home', textContent: 'Home', className: 'current'});
+    const menu = Link({id: 'Menu', textContent: 'Menu'});
+    const about = Link({id: 'About', textContent: 'About'});
 
     list.append(home);
     list.append(menu);
@@ -28,9 +28,18 @@ function List() {
 }
 
 function Link(param) {
-    const container = Element({type: 'li'});
+    const container = Element({type: 'li', id: param.id});
     const link = Element({type: 'a', className: param.className});
     link.textContent = param.textContent;
+
+    if(param.callback) {
+        link.addEventListener(
+            'click',
+            e => {
+                param.callback(e);
+            }
+        );
+    }
 
     container.append(link);
 
