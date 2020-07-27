@@ -10,10 +10,6 @@ export default function Navbar() {
     return nav;
 }
 
-function Toggle(next, current) {
-
-}
-
 function List() {
     const list = Element({type: 'ul'});
     const home = Link({id: 'Home', textContent: 'Home', className: 'current'});
@@ -28,8 +24,8 @@ function List() {
 }
 
 function Link(param) {
-    const container = Element({type: 'li', id: param.id});
-    const link = Element({type: 'a', className: param.className});
+    const container = Element({type: 'li'});
+    const link = Element({type: 'a', className: param.className, id: param.id});
     link.textContent = param.textContent;
 
     if(param.callback) {
