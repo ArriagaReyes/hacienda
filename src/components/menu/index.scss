@@ -1,0 +1,14 @@
+section {
+    ul {
+        grid-column: 1/5;
+        list-style: none;
+        li {
+            font-size: 1.33rem;
+            padding-bottom: 2rem;
+        }
+    }
+}
+
+.grid-rows {
+    grid-template-rows: 1fr 3fr;
+}
