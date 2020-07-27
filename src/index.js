@@ -1,9 +1,13 @@
 import Navbar from './components/navbar/index';
 import Home from './components/home/index';
+import Menu from './components/menu/index';
+//import Home from './components/home/index';
 import Element from './components/element';
 
 const root = document.getElementById('root');
 root.style.height = `${window.innerHeight}px`;
+
+root.appendChild(Navbar());
 
 window.addEventListener(
     'resize', 
@@ -13,18 +17,43 @@ window.addEventListener(
     }
 );
 
-const home = Element({type: 'div'});
-home.textContent = 'Home';
+// Page interaction logic
 
-const menu = Element({type: 'div'});
-menu.textContent = 'Menu';
+const homeLink = document.getElementById('Home');
+const menuLink = document.getElementById('Menu');
+const home = Home();
+const menu = Menu();
+let section = home;
 
-root.append(Navbar({Home: home, Menu: menu}));
-root.append(Home());
+root.appendChild(section);
 
+function RemoveClass(name) {
+    const currentElements = document.getElementsByClassName(name);
+    for (let i = 0; i < currentElements.length; i++) {
+        currentElements[i].className = '';
+    }
+}
 
-/*root.removeChild(root.childNodes[root.childNodes.length - 1]);
-console.log('Removed home');
-console.log('Adding menu');
-root.appendChild(menu);
-console.log('Menu added');*/
+homeLink.addEventListener(
+    'click',
+    e => {
+        if(section === home) return;
+        root.className = 'red';
+        RemoveClass('current');
+        homeLink.className = 'current';
+        section.replaceWith(home);
+        section = home;
+    }
+);
+
+menuLink.addEventListener(
+    'click',
+    e => {
+        if(section === menu) return;
+        root.className = 'yellow';
+        RemoveClass('current');
+        menuLink.className = 'current';
+        section.replaceWith(menu);
+        section = menu;
+    }
+);
