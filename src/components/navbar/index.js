@@ -14,11 +14,11 @@ function List() {
     const list = Element({type: 'ul'});
     const home = Link({id: 'Home', textContent: 'Home', className: 'current'});
     const menu = Link({id: 'Menu', textContent: 'Menu'});
-    const about = Link({id: 'About', textContent: 'About'});
+    //const about = Link({id: 'About', textContent: 'About'});
 
     list.append(home);
     list.append(menu);
-    list.append(about);
+    //list.append(about);
 
     return list;
 }
