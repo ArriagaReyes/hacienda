@@ -1,0 +1,14 @@
+section {
+    .items {
+        text-align: left;
+        overflow: auto;
+    }
+    button {
+        position: absolute;
+        right: 1rem;
+        border: unset;
+        background: unset;
+        font-size: inherit;
+        font-family: inherit;
+    }
+}
