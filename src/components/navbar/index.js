@@ -4,6 +4,7 @@ import './index.scss';
 export default function Navbar() {
     const nav = Element({type: 'nav'});
     const list = List();
+    nav.id = 'nav';
 
     nav.append(list);
 
