@@ -1,4 +1,5 @@
 import Element from '../element';
+import Catagory from '../catagory/index';
 import './index.scss';
 
 const catagories = [
@@ -21,7 +22,17 @@ export default function Menu() {
     catagories.map(
         value => {
             const index = Element({type: 'li'});
-            index.textContent = value;
+            const content = Element({type: 'a'});
+            const catagory = Catagory(value, [{name: 'name', text: 'text'}, {name: 'name', text: 'text'}]);
+            content.textContent = value;
+            content.addEventListener(
+                'click',
+                e => {
+                    catagory.style.display = 'block';
+                }
+            );
+            index.appendChild(content);
+            index.appendChild(catagory);
             list.appendChild(index);
         }
     );
