@@ -1,7 +1,7 @@
 import Element from '../element';
 import './index.scss';
 
-export default function Catagory(name, list, callBack) {
+export default function Catagory(name, list) {
     const NAVBAR = document.getElementById('nav');
     const CATAGORY = Element({type: 'section'});
     const TITLE = Element({type: 'h1'});
@@ -10,7 +10,7 @@ export default function Catagory(name, list, callBack) {
     
     CATAGORY.appendChild(TITLE);
     CATAGORY.appendChild(List(list));
-    CATAGORY.appendChild(Close(callBack));
+    CATAGORY.appendChild(Close(CATAGORY));
 
     return CATAGORY;
 }
@@ -35,13 +35,13 @@ function List(arr) {
     return LIST;
 }
 
-function Close(callback) {
+function Close(element) {
     const BUTTON = Element({type: 'button'});
     BUTTON.textContent = 'button';
     BUTTON.addEventListener(
         'click',
         e => {
-            callback();
+            element.style.display = 'none';
         }
     );
 
