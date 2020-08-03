@@ -5,6 +5,9 @@ section {
         li {
             font-size: 1.33rem;
             padding-bottom: 2rem;
+            section {
+                display: none;
+            }
         }
     }
 }
