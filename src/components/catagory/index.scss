@@ -1,7 +1,11 @@
-section {
+
     .items {
+        display: none;
         text-align: left;
         overflow: auto;
+    }
+    .items-show {
+        display: block;
     }
     button {
         position: absolute;
@@ -11,4 +15,3 @@ section {
         font-size: inherit;
         font-family: inherit;
     }
-}

@@ -1,21 +1,7 @@
 import Element from '../element';
 import './index.scss';
 
-export default function Catagory(name, list) {
-    const NAVBAR = document.getElementById('nav');
-    const CATAGORY = Element({type: 'section'});
-    const TITLE = Element({type: 'h1'});
-    CATAGORY.style.height = `calc(100% - ${NAVBAR.clientHeight}px)`;
-    TITLE.textContent = name;
-    
-    CATAGORY.appendChild(TITLE);
-    CATAGORY.appendChild(List(list));
-    CATAGORY.appendChild(Close(CATAGORY));
-
-    return CATAGORY;
-}
-
-function List(arr) {
+export default function List(arr) {
     const LIST = Element({type: 'ul', className: 'items'});
 
     for (const item of arr) {
@@ -33,17 +19,4 @@ function List(arr) {
     }
 
     return LIST;
-}
-
-function Close(element) {
-    const BUTTON = Element({type: 'button'});
-    BUTTON.textContent = 'button';
-    BUTTON.addEventListener(
-        'click',
-        e => {
-            element.style.display = 'none';
-        }
-    );
-
-    return BUTTON;
 }
