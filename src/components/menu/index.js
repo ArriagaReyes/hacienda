@@ -1,15 +1,22 @@
 import Element from '../element';
-import Catagory from '../catagory/index';
+import List from '../catagory/index';
+import { breakfast } from '../catagories/breakfast';
+import { burgers } from '../catagories/burgers';
+import { entrees } from '../catagories/entrees';
+import { kids } from '../catagories/kids';
+import { sandwhiches } from '../catagories/sandwhiches';
+import { seafood } from '../catagories/seafood';
+import { specialties } from '../catagories/specialties';
 import './index.scss';
 
 const catagories = [
-    'Entrees', 
-    'Specialties', 
-    'Breakfast', 
-    'Sandwhiches', 
-    'Seafood', 
-    'kids', 
-    'Burgers'
+    ['Entrees', entrees],
+    ['Specialties', specialties],
+    ['Breakfast', breakfast],
+    ['Sandwhiches', sandwhiches],
+    ['Seafood', seafood],
+    ['Kids', kids],
+    ['Burgers', burgers]
 ];
 
 export default function Menu() {
@@ -23,12 +30,16 @@ export default function Menu() {
         value => {
             const index = Element({type: 'li'});
             const content = Element({type: 'a'});
-            const catagory = Catagory(value, [{name: 'name', text: 'text'}, {name: 'name', text: 'text'}]);
-            content.textContent = value;
+            const catagory = List(value[1]);
+            content.textContent = value[0];
             content.addEventListener(
                 'click',
                 e => {
-                    catagory.style.display = 'block';
+                    if(catagory.className === 'items') {
+                        catagory.className = 'items items-show';
+                    } else {
+                        catagory.className = 'items';
+                    }
                 }
             );
             index.appendChild(content);

@@ -1,5 +1,7 @@
 section {
+    overflow: hidden;
     ul {
+        overflow: auto;
         grid-column: 1/5;
         list-style: none;
         li {
